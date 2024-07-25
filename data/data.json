@@ -1,0 +1,43 @@
+{
+  "couvScanVul": {
+    "labels": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "data": [12, 14, 23, 45, 34, 89, 67, 89, 67, 70, 75, 95]
+  },
+  "nbVul": {
+    "labels": ["Critique", "Haut", "Moyen", "Bas"],
+    "data": [12, 14, 23, 45]
+  },
+  "nbConnIP": {
+    "labels": ["S1 2023", "S2 2023", "S1 2024", "S2 2024"],
+    "data": [200, 567, 346, 289]
+  },
+  "tauxDispoSI": {
+    "labels": ["S1 2023", "S2 2023", "S1 2024", "S2 2024"],
+    "data": [12, 14, 23, 45]
+  },
+  "vulTraite": {
+    "labels": ["traitées", "non traitées"],
+    "data": [56, 44]
+  },
+  "osServMaj": {
+    "labels": ["à jour", "non à jour"],
+    "data": [88, 12]
+  },
+  "tauxSurvSysProd": {
+    "labels": ["traitées", "non traitées"],
+    "data": [56, 44]
+  }
+}

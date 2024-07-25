@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/main.js"></script>
+    <title>Chart.js with Vite</title>
+  </head>
+
+  <body>
+    <div class="w-screen h-screen p-5 bg-black text-white">
+      <div class="w-full h-full grid grid-cols-6 grid-rows-5 gap-4">
+        <div class="flex" id="component-container-1"></div>
+        <div class="flex" id="component-container-2"></div>
+        <div class="flex" id="component-container-3"></div>
+        <div
+          class="flex col-span-3 row-span-3"
+          id="component-container-4"
+        ></div>
+        <div
+          class="flex col-span-3 row-span-2"
+          id="component-container-5"
+        ></div>
+        <div
+          class="flex col-span-2 row-span-2"
+          id="component-container-6"
+        ></div>
+        <div
+          class="flex col-span-2 row-span-2"
+          id="component-container-7"
+        ></div>
+        <div class="flex col-span-2" id="component-container-8"></div>
+        <div class="flex col-span-2" id="component-container-9"></div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { createComponent } from './src/component.js';
+      import { createChart } from './src/createChart.js';
+      import { nbVul } from './src/charts/nbVul.js';
+      import { couvScanVul } from './src/charts/couvScanVul.js';
+      import { tauxDispoSI } from './src/charts/tauxDispoSI.js';
+      import { vulTraite } from './src/charts/vulTraite.js';
+      import { nbConnIP } from './src/charts/nbConnIP.js';
+      import { osServMaj } from './src/charts/osServMaj.js';
+      import { tauxSurvSysProd } from './src/charts/tauxSurvSysProd.js';
+
+      const components = [
+        { chartId: 'chart-1', config: vulTraite },
+        { chartId: 'chart-2', config: osServMaj },
+        { chartId: 'chart-3', config: tauxSurvSysProd },
+        { chartId: 'chart-4', config: nbConnIP },
+        { chartId: 'chart-5', config: couvScanVul },
+        { chartId: 'chart-6', config: nbVul },
+        { chartId: 'chart-7', config: tauxDispoSI },
+        { chartId: 'chart-8' },
+        { chartId: 'chart-9' },
+      ];
+
+      components.forEach((component, index) => {
+        const container = document.getElementById(
+          `component-container-${index + 1}`
+        );
+        if (container) {
+          container.appendChild(createComponent(component.chartId));
+          if (component.config) {
+            createChart(component.chartId, component.config);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
