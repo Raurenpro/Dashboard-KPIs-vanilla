@@ -6,7 +6,7 @@ Chart.register(ChartDataLabels);
 export async function createChart(chartId, chartConfig) {
   const ctx = document.getElementById(chartId);
   if (ctx) {
-    const response = await fetch('../data/data.json');
+    const response = await fetch('/data/data.json');
     const data = await response.json();
     const chartData = data[chartConfig.dataKey];
 
