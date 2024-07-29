@@ -38,7 +38,7 @@ export const silene = {
         },
         centerText: {
           display: true,
-          text: 'Niveau 5',
+          text: '',
           color: 'white',
           font: {
             size: 18,
@@ -55,16 +55,18 @@ export const silene = {
       {
         id: 'centerText',
         beforeDraw: (chart) => {
-          const { ctx, width, height } = chart;
-          const { text, color, font } = chart.options.plugins.centerText;
-  
-          ctx.save();
-          ctx.font = `${font.weight} ${font.size}px sans-serif`;
-          ctx.fillStyle = color;
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          ctx.fillText(text, width / 2, height - 20);
-          ctx.restore();
+            const { ctx, width, height } = chart;
+            const { color, font } = chart.options.plugins.centerText;
+            const data = chart.data.datasets[0].data
+            const text = 'Niveau ' + data[0]
+
+            ctx.save();
+            ctx.font = `${font.weight} ${font.size}px sans-serif`;
+            ctx.fillStyle = color;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText( text, width / 2, height - 10);
+            ctx.restore();
         },
       },
     ],

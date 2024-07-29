@@ -38,7 +38,7 @@ export const osServMaj = {
       },
       centerText: {
         display: true,
-        text: '88%', // Exemple de pourcentage
+        text: '', // Exemple de pourcentage
         color: 'white',
         font: {
           size: 18,
@@ -56,14 +56,16 @@ export const osServMaj = {
       id: 'centerText',
       beforeDraw: (chart) => {
         const { ctx, width, height } = chart;
-        const { text, color, font } = chart.options.plugins.centerText;
+        const { color, font } = chart.options.plugins.centerText;
+        const data = chart.data.datasets[0].data
+        const text = data[0] + ' %'
 
         ctx.save();
         ctx.font = `${font.weight} ${font.size}px sans-serif`;
         ctx.fillStyle = color;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText(text, width / 2, height - 20);
+        ctx.fillText( text, width / 2, height - 10);
         ctx.restore();
       },
     },
