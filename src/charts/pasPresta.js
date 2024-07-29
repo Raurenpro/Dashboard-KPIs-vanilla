@@ -21,7 +21,7 @@ export const pasPresta = {
         title: {
           align: 'start',
           display: true,
-          text: 'Nombre de vulnérabilités',
+          text: 'Taux de PAS founis par les prestataires',
           color: 'white',
           font: {
             size: 24,

@@ -26,7 +26,7 @@
   },
   "tauxDispoSI": {
     "labels": ["S1 2023", "S2 2023", "S1 2024", "S2 2024"],
-    "data": [12, 14, 23, 45]
+    "data": [67, 89, 96, 79]
   },
   "vulTraite": {
     "labels": ["traitées", "non traitées"],
@@ -38,10 +38,18 @@
   },
   "tauxSurvSysProd": {
     "labels": ["traitées", "non traitées"],
-    "data": [56, 44]
+    "data": [65, 35]
   },
   "pasPresta": {
     "labels": ["PAS fournis", "PAS non fournis"],
     "data": [12, 14]
+  },
+  "oradad": {
+    "labels": ["Niveau", "Niveau restant"],
+    "data": [4, 1]
+  },
+  "silene": {
+    "labels": ["Niveau", "Niveau restant"],
+    "data": [5, 0]
   }
 }

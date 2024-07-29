@@ -10,19 +10,38 @@
   <body>
     <div class="w-screen h-screen bg-black text-white">
       <div class="flex w-full h-full">
-        <div class="flex w-[15%] h-full justify-center bg-zinc-800 border-r border-zinc-600 p-5">Titre</div>
+        <div class="flex flex-col w-[15%] h-full bg-zinc-800 border-r border-zinc-600">
+          <div class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-center text-3xl font-bold pb-20 m-5 select-none">Dashboard KPI</div>
+          <div class="flex flex-col h-full font-bold text-xl space-y-2">
+            <div class="text-2xl text-violet-500 py-3 pl-5 select-none">
+              Titre
+            </div>
+            <div class="py-3 pl-5 bg-pink-800 cursor-pointer hover:bg-pink-700">
+              Tableau de bord
+            </div>
+            <div class="py-3 pl-5 cursor-pointer hover:bg-pink-700">
+              Sous-titre
+            </div>
+            <div class="py-3 pl-5 cursor-pointer hover:bg-pink-700">
+              Sous-titre
+            </div>
+            <div class="py-3 pl-5 cursor-pointer hover:bg-pink-700">
+              Sous-titre
+            </div>
+          </div>
+        </div>
         <div class="flex flex-col w-[85%] h-full">
           <div class="flex h-[10%] w-full items-center bg-zinc-800 border-b border-zinc-600 space-x-2 px-5">
             <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-sky-700" id="title-1">
               Protection des systèmes et des infrastructures
             </div>
-            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-green-700" id="title-2">
+            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-yellow-700" id="title-2">
               Gouvernance et organisation
             </div>
-            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-red-700" id="title-3">
-              Titre 2
+            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-green-700" id="title-3">
+              Gestion des incidents et résilience
             </div>
-            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-yellow-700" id="title-4">
+            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-red-700" id="title-4">
               Titre 3
             </div>
             <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-purple-700" id="title-5">
@@ -58,6 +77,8 @@
       import { osServMaj } from './src/charts/osServMaj.js';
       import { tauxSurvSysProd } from './src/charts/tauxSurvSysProd.js';
       import { pasPresta } from './src/charts/pasPresta.js';
+      import { oradad } from './src/charts/oradad.js';
+      import { silene } from './src/charts/silene.js';
 
       const dashboardConfigurations = {
         'title-1': {
@@ -94,8 +115,8 @@
           ],
           components: [
             { chartId: 'chart-1', config: pasPresta },
-            { chartId: 'chart-2', config: osServMaj },
-            { chartId: 'chart-3', config: tauxSurvSysProd },
+            { chartId: 'chart-2', config: oradad },
+            { chartId: 'chart-3', config: silene },
             { chartId: 'chart-4', config: nbConnIP },
             { chartId: 'chart-5', config: couvScanVul },
           ]
@@ -156,13 +177,13 @@
               activeTitle.classList.add('bg-sky-800');
               break;
             case 'title-2':
-              activeTitle.classList.add('bg-green-800');
+              activeTitle.classList.add('bg-yellow-800');
               break;
             case 'title-3':
-              activeTitle.classList.add('bg-red-800');
+              activeTitle.classList.add('bg-green-800');
               break;
             case 'title-4':
-              activeTitle.classList.add('bg-yellow-800');
+              activeTitle.classList.add('bg-red-800');
               break;
             case 'title-5':
               activeTitle.classList.add('bg-purple-800');

@@ -38,7 +38,7 @@ export const tauxSurvSysProd = {
       },
       centerText: {
         display: true,
-        text: '56%', // Exemple de pourcentage
+        text: '65%', // Exemple de pourcentage
         color: 'white',
         font: {
           size: 18,
