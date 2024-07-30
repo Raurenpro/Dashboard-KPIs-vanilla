@@ -1,12 +1,12 @@
-export const silene = {
+export const lastExercice = {
     type: 'doughnut',
-    dataKey: 'silene',
+    dataKey: 'lastExercice',
     data: {
       labels: [],
       datasets: [
         {
           data: [],
-          backgroundColor: ['rgb(34, 197, 94)', 'rgba(34, 197, 94, 0.3)'],
+          backgroundColor: ['rgb(255, 205, 86)', 'rgba(255, 205, 86, 0.3)'],
           hoverOffset: 4,
           borderWidth: false,
         },
@@ -20,10 +20,10 @@ export const silene = {
       plugins: {
         title: {
           display: true,
-          text: 'Audit SILENE',
+          text: 'Écart de délai depuis le dernier exercice de gestion de crise réalisé',
           color: 'white',
           font: {
-            size: 18,
+            size: 14,
             weight: 'bold',
           },
           padding: {
@@ -55,18 +55,18 @@ export const silene = {
       {
         id: 'centerText',
         beforeDraw: (chart) => {
-            const { ctx, width, height } = chart;
-            const { color, font } = chart.options.plugins.centerText;
-            const data = chart.data.datasets[0].data
-            const text = 'Niv. ' + data[0]
-
-            ctx.save();
-            ctx.font = `${font.weight} ${font.size}px sans-serif`;
-            ctx.fillStyle = color;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText( text, width / 2, height - 10);
-            ctx.restore();
+          const { ctx, width, height } = chart;
+          const { color, font } = chart.options.plugins.centerText;
+          const data = chart.data.datasets[0].data
+          const text = data[1] + ' j'
+  
+          ctx.save();
+          ctx.font = `${font.weight} ${font.size}px sans-serif`;
+          ctx.fillStyle = color;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText( text, width / 2, height - 10);
+          ctx.restore();
         },
       },
     ],

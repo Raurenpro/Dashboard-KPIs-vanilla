@@ -12,20 +12,20 @@
       <div class="flex w-full h-full">
         <div class="flex flex-col w-[15%] h-full bg-zinc-800 border-r border-zinc-600">
           <div class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-center text-3xl font-bold pb-20 m-5 select-none">Dashboard KPI</div>
-          <div class="flex flex-col h-full font-bold text-xl space-y-2">
-            <div class="text-2xl text-violet-500 py-3 pl-5 select-none">
-              Titre
+          <div class="flex flex-col h-full font-bold text-lg space-y-2">
+            <div class="text-xl text-violet-500 py-3 pl-5 select-none">
+              Menu
             </div>
-            <div class="py-3 pl-5 bg-pink-800 cursor-pointer hover:bg-pink-700">
+            <div class="py-3 pl-5 bg-gradient-to-r from-pink-800 cursor-pointer hover:bg-pink-700 transition duration-150">
               Tableau de bord
             </div>
-            <div class="py-3 pl-5 cursor-pointer hover:bg-pink-700">
+            <div class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
               Sous-titre
             </div>
-            <div class="py-3 pl-5 cursor-pointer hover:bg-pink-700">
+            <div class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
               Sous-titre
             </div>
-            <div class="py-3 pl-5 cursor-pointer hover:bg-pink-700">
+            <div class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
               Sous-titre
             </div>
           </div>
@@ -42,16 +42,16 @@
               Gestion des incidents et résilience
             </div>
             <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-red-700" id="title-4">
-              Titre 3
+              Environnement utilisateur
             </div>
             <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-purple-700" id="title-5">
-              Titre 4
+              Contrôle d'accès
             </div>
             <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-pink-700" id="title-6">
-              Titre 5
+              Développement et sécurité dans les projets
             </div>
           </div>
-          <div class="flex h-[90%] w-full grid grid-cols-6 grid-rows-5 gap-4 p-5">
+          <div class="flex h-[90%] w-full grid grid-cols-5 grid-rows-5 gap-4 p-4">
             <div id="component-container-1"></div>
             <div id="component-container-2"></div>
             <div id="component-container-3"></div>
@@ -79,6 +79,7 @@
       import { pasPresta } from './src/charts/pasPresta.js';
       import { oradad } from './src/charts/oradad.js';
       import { silene } from './src/charts/silene.js';
+      import { lastExercice } from './src/charts/lastExercice.js';
 
       const dashboardConfigurations = {
         'title-1': {
@@ -86,12 +87,12 @@
             { id: 'component-container-1', classes: 'flex' },
             { id: 'component-container-2', classes: 'flex' },
             { id: 'component-container-3', classes: 'flex' },
-            { id: 'component-container-4', classes: 'flex col-span-3 row-span-3' },
+            { id: 'component-container-4', classes: 'flex col-span-2 row-span-3' },
             { id: 'component-container-5', classes: 'flex col-span-3 row-span-2' },
             { id: 'component-container-6', classes: 'flex col-span-2 row-span-2' },
             { id: 'component-container-7', classes: 'flex col-span-2 row-span-2' },
-            { id: 'component-container-8', classes: 'flex col-span-2' },
-            { id: 'component-container-9', classes: 'flex col-span-2' },
+            { id: 'component-container-8', classes: 'flex' },
+            { id: 'component-container-9', classes: 'flex' },
           ],
           components: [
             { chartId: 'chart-1', config: vulTraite },
@@ -108,17 +109,17 @@
         'title-2': {
           grid: [
             { id: 'component-container-1', classes: 'flex col-span-2 row-span-2' },
-            { id: 'component-container-2', classes: 'flex col-span-2 row-span-2' },
+            { id: 'component-container-2', classes: 'flex' },
             { id: 'component-container-3', classes: 'flex col-span-2 row-span-2' },
-            { id: 'component-container-4', classes: 'flex col-span-2' },
-            { id: 'component-container-5', classes: 'flex col-span-2' },
+            { id: 'component-container-4', classes: 'flex' },
+            { id: 'component-container-5', classes: 'flex col-span-2 row-span-2' },
           ],
           components: [
             { chartId: 'chart-1', config: pasPresta },
-            { chartId: 'chart-2', config: oradad },
-            { chartId: 'chart-3', config: silene },
-            { chartId: 'chart-4', config: nbConnIP },
-            { chartId: 'chart-5', config: couvScanVul },
+            { chartId: 'chart-2', config: lastExercice },
+            { chartId: 'chart-3', config: oradad },
+            { chartId: 'chart-4', config: oradad },
+            { chartId: 'chart-5', config: silene },
           ]
         },
         'title-3': {
@@ -167,29 +168,29 @@
         // Mettre à jour la couleur de fond du titre cliqué
         const titles = document.querySelectorAll('[id^="title-"]');
         titles.forEach(title => {
-          title.classList.remove('bg-sky-800', 'bg-green-800', 'bg-red-800', 'bg-yellow-800', 'bg-purple-800', 'bg-pink-800');
+          title.classList.remove('from-sky-800', 'from-green-800', 'from-red-800', 'from-yellow-800', 'from-purple-800', 'from-pink-800');
         });
 
         const activeTitle = document.getElementById(titleId);
         if (activeTitle) {
           switch (titleId) {
             case 'title-1':
-              activeTitle.classList.add('bg-sky-800');
+              activeTitle.classList.add('bg-gradient-to-b', 'from-sky-800');
               break;
             case 'title-2':
-              activeTitle.classList.add('bg-yellow-800');
+              activeTitle.classList.add('bg-gradient-to-b', 'from-yellow-800');
               break;
             case 'title-3':
-              activeTitle.classList.add('bg-green-800');
+              activeTitle.classList.add('bg-gradient-to-b', 'from-green-800');
               break;
             case 'title-4':
-              activeTitle.classList.add('bg-red-800');
+              activeTitle.classList.add('bg-gradient-to-b', 'from-red-800');
               break;
             case 'title-5':
-              activeTitle.classList.add('bg-purple-800');
+            activeTitle.classList.add('bg-gradient-to-b', 'from-purple-800');
               break;
             case 'title-6':
-              activeTitle.classList.add('bg-pink-800');
+              activeTitle.classList.add('bg-gradient-to-b', 'from-pink-800');
               break;
           }
         }
@@ -204,7 +205,7 @@
           });
         });
 
-        // Initialiser avec le premier titre
+        // Initialiser avec la première page
         updateDashboardContent('title-1');
       });
     </script>

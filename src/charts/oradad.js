@@ -58,7 +58,7 @@ export const oradad = {
             const { ctx, width, height } = chart;
             const { color, font } = chart.options.plugins.centerText;
             const data = chart.data.datasets[0].data
-            const text = 'Niveau ' + data[0]
+            const text = 'Niv. ' + data[0]
 
             ctx.save();
             ctx.font = `${font.weight} ${font.size}px sans-serif`;

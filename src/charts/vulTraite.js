@@ -38,7 +38,7 @@ export const vulTraite = {
       },
       centerText: {
         display: true,
-        text: '', // Exemple de pourcentage
+        text: '',
         color: 'white',
         font: {
           size: 18,
