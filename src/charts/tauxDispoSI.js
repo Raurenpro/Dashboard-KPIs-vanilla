@@ -19,10 +19,10 @@ export const tauxDispoSI = {
       title: {
         align: 'start',
         display: true,
-        text: 'Taux de disponibilité du SI',
+        text: '',
         color: 'white',
         font: {
-          size: 24,
+          size: 14,
           weight: 'bold',
         },
         padding: {

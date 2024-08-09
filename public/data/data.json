@@ -29,7 +29,7 @@
     "data": [67, 89, 96, 79]
   },
   "vulTraite": {
-    "labels": ["traitées", "non traitées"],
+    "labels": ["% traitées ce mois-ci", "% traitées le mois dernier"],
     "data": [56, 44]
   },
   "osServMaj": {

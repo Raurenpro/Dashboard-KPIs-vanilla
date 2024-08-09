@@ -20,10 +20,10 @@ export const silene = {
       plugins: {
         title: {
           display: true,
-          text: 'Audit SILENE',
+          text: '',
           color: 'white',
           font: {
-            size: 18,
+            size: 14,
             weight: 'bold',
           },
           padding: {
@@ -41,7 +41,7 @@ export const silene = {
           text: '',
           color: 'white',
           font: {
-            size: 18,
+            size: 12,
             weight: 'bold',
           },
         },

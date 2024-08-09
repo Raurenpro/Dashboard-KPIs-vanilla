@@ -20,10 +20,10 @@ export const oradad = {
       plugins: {
         title: {
           display: true,
-          text: 'Audit ORADAD',
+          text: '',
           color: 'white',
           font: {
-            size: 18,
+            size: 14,
             weight: 'bold',
           },
           padding: {
@@ -41,7 +41,7 @@ export const oradad = {
           text: '',
           color: 'white',
           font: {
-            size: 18,
+            size: 12,
             weight: 'bold',
           },
         },

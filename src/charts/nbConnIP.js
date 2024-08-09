@@ -19,10 +19,10 @@ export const nbConnIP = {
       title: {
         align: 'start',
         display: true,
-        text: 'Nombre de connexions bloquées vers ou depuis une IP Dangereuse',
+        text: '',
         color: 'white',
         font: {
-          size: 24,
+          size: 14,
           weight: 'bold',
         },
         padding: {

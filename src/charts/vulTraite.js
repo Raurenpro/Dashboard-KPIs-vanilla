@@ -23,7 +23,7 @@ export const vulTraite = {
         text: 'Vulnerabilités traitées',
         color: 'white',
         font: {
-          size: 18,
+          size: 14,
           weight: 'bold',
         },
         padding: {
@@ -41,7 +41,7 @@ export const vulTraite = {
         text: '',
         color: 'white',
         font: {
-          size: 18,
+          size: 12,
           weight: 'bold',
         },
       },

@@ -20,7 +20,7 @@ export const lastExercice = {
       plugins: {
         title: {
           display: true,
-          text: 'Écart de délai depuis le dernier exercice de gestion de crise réalisé',
+          text: '',
           color: 'white',
           font: {
             size: 14,
@@ -41,7 +41,7 @@ export const lastExercice = {
           text: '',
           color: 'white',
           font: {
-            size: 18,
+            size: 12,
             weight: 'bold',
           },
         },

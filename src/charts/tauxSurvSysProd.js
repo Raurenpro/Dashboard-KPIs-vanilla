@@ -20,7 +20,7 @@ export const tauxSurvSysProd = {
     plugins: {
       title: {
         display: true,
-        text: 'Taux de surveillance des systèmes en production',
+        text: '',
         color: 'white',
         font: {
           size: 14,
@@ -41,7 +41,7 @@ export const tauxSurvSysProd = {
         text: '',
         color: 'white',
         font: {
-          size: 18,
+          size: 12,
           weight: 'bold',
         },
       },

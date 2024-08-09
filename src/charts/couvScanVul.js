@@ -19,10 +19,10 @@ export const couvScanVul = {
       title: {
         align: 'start',
         display: true,
-        text: 'Couverture des scans de vulnérabilités',
+        text: '',
         color: 'white',
         font: {
-          size: 24,
+          size: 14,
           weight: 'bold',
         },
         padding: {

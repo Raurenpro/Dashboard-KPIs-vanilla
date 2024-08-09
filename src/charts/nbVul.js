@@ -23,10 +23,10 @@ export const nbVul = {
       title: {
         align: 'start',
         display: true,
-        text: 'Nombre de vulnérabilités',
+        text: '',
         color: 'white',
         font: {
-          size: 24,
+          size: 14,
           weight: 'bold',
         },
         padding: {

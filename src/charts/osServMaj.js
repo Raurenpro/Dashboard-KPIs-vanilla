@@ -20,10 +20,10 @@ export const osServMaj = {
     plugins: {
       title: {
         display: true,
-        text: 'OS à jour sur les serveurs',
+        text: '',
         color: 'white',
         font: {
-          size: 18,
+          size: 14,
           weight: 'bold',
         },
         padding: {
@@ -41,7 +41,7 @@ export const osServMaj = {
         text: '',
         color: 'white',
         font: {
-          size: 18,
+          size: 12,
           weight: 'bold',
         },
       },

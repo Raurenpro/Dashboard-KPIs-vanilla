@@ -17,41 +17,29 @@
               Menu
             </div>
             <a href="../index.html" class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
-                Tableau de bord
+                Tableau de bord SI
             </a>
             <a href="vulnerabilite.html" class="py-3 pl-5 bg-gradient-to-r from-pink-800 cursor-pointer hover:bg-pink-700 transition duration-150">
                 Vulnérabilités
             </a>
             <a href="vulnerabilite.html" class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
-                Sous-titre
+                Plan d'action
             </a>
             <a href="vulnerabilite.html" class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
-                Sous-titre
+                RGPD
             </a>
           </div>
         </div>
         <div class="flex flex-col w-[85%] h-full">
           <div class="flex h-[10%] w-full items-center bg-zinc-800 border-b border-zinc-600 space-x-2 px-5">
-            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-sky-700" id="title-1">
-              Protection des systèmes et des infrastructures
+            <div class="flex w-[25%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-sky-700" id="title-1">
+              Détail des vulnérabilités
             </div>
-            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-yellow-700" id="title-2">
-              Gouvernance et organisation
-            </div>
-            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-green-700" id="title-3">
-              Gestion des incidents et résilience
-            </div>
-            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-red-700" id="title-4">
-              Environnement utilisateur
-            </div>
-            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-purple-700" id="title-5">
-              Contrôle d'accès
-            </div>
-            <div class="flex w-[15%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-pink-700" id="title-6">
-              Développement et sécurité dans les projets
+            <div class="flex w-[25%] h-full items-center text-center justify-center p-2 font-bold cursor-pointer transition duration-150 hover:bg-yellow-700" id="title-2">
+              Titre 2
             </div>
           </div>
-          <div>
+          <div class="flex h-[90%] w-full p-4">
             coucou
         </div>
         </div>
@@ -59,6 +47,39 @@
     </div>
 
     <script type="module">
+
+function updatePageContent(titleId) {
+        // Mettre à jour la couleur de fond du titre cliqué
+        const titles = document.querySelectorAll('[id^="title-"]');
+        titles.forEach(title => {
+          title.classList.remove('from-sky-800', 'from-yellow-800');
+        });
+
+        const activeTitle = document.getElementById(titleId);
+        if (activeTitle) {
+          switch (titleId) {
+            case 'title-1':
+              activeTitle.classList.add('bg-gradient-to-b', 'from-sky-800');
+              break;
+            case 'title-2':
+              activeTitle.classList.add('bg-gradient-to-b', 'from-yellow-800');
+              break;
+          }
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const titles = document.querySelectorAll('[id^="title-"]');
+        titles.forEach(title => {
+          title.addEventListener('click', (event) => {
+            const titleId = event.target.id;
+            updatePageContent(titleId);
+          });
+        });
+
+        // Initialiser avec la première page
+        updatePageContent('title-1');
+      });
     </script>
   </body>
 </html>

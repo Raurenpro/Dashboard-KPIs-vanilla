@@ -16,17 +16,17 @@
             <div class="text-xl text-violet-500 py-3 pl-5 select-none">
               Menu
             </div>
-            <a href="index.html" class="py-3 pl-5 bg-gradient-to-r from-pink-800 cursor-pointer hover:bg-pink-700 transition duration-150">
-              Tableau de bord
+            <a href="/index.html" class="py-3 pl-5 bg-gradient-to-r from-pink-800 cursor-pointer hover:bg-pink-700 transition duration-150">
+              Tableau de bord SI
             </a>
-            <a href="src/vulnerabilite.html" class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
+            <a href="/src/vulnerabilite.html" class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
               Vulnérabilités
             </a>
-            <a href="src/vulnerabilite.html" class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
-              Sous-titre
+            <a href="/src/vulnerabilite.html" class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
+              Plan d'action
             </a>
-            <a href="src/vulnerabilite.html" class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
-              Sous-titre
+            <a href="/src/vulnerabilite.html" class="py-3 pl-5 cursor-pointer hover:bg-pink-700 transition duration-150">
+              RGPD
             </a>
           </div>
         </div>
@@ -51,7 +51,7 @@
               Développement et sécurité dans les projets
             </div>
           </div>
-          <div class="flex h-[90%] w-full grid grid-cols-5 grid-rows-5 gap-4 p-4">
+          <div class="flex h-[90%] w-full grid grid-cols-6 grid-rows-6 gap-4 p-4">
             <div id="component-container-1"></div>
             <div id="component-container-2"></div>
             <div id="component-container-3"></div>
@@ -67,12 +67,14 @@
     </div>
 
     <script type="module">
-      import { createComponent } from './src/component.js';
+      import { createComponentChart } from './src/componentChart.js';
+      import { createComponentMetric } from './src/componentMetric.js';
       import { createChart } from './src/createChart.js';
+      import { createMetric } from './src/createMetric.js';
       import { nbVul } from './src/charts/nbVul.js';
       import { couvScanVul } from './src/charts/couvScanVul.js';
       import { tauxDispoSI } from './src/charts/tauxDispoSI.js';
-      import { vulTraite } from './src/charts/vulTraite.js';
+      import { vulTraite } from './src/metrics/vulTraite.js';
       import { nbConnIP } from './src/charts/nbConnIP.js';
       import { osServMaj } from './src/charts/osServMaj.js';
       import { tauxSurvSysProd } from './src/charts/tauxSurvSysProd.js';
@@ -87,39 +89,36 @@
             { id: 'component-container-1', classes: 'flex' },
             { id: 'component-container-2', classes: 'flex' },
             { id: 'component-container-3', classes: 'flex' },
-            { id: 'component-container-4', classes: 'flex col-span-2 row-span-3' },
-            { id: 'component-container-5', classes: 'flex col-span-3 row-span-2' },
+            { id: 'component-container-4', classes: 'flex col-span-3 row-span-4' },
+            { id: 'component-container-5', classes: 'flex col-span-3 row-span-3' },
             { id: 'component-container-6', classes: 'flex col-span-2 row-span-2' },
             { id: 'component-container-7', classes: 'flex col-span-2 row-span-2' },
             { id: 'component-container-8', classes: 'flex' },
-            { id: 'component-container-9', classes: 'flex' },
           ],
           components: [
-            { chartId: 'chart-1', config: vulTraite },
-            { chartId: 'chart-2', config: osServMaj },
-            { chartId: 'chart-3', config: tauxSurvSysProd },
-            { chartId: 'chart-4', config: nbConnIP },
-            { chartId: 'chart-5', config: couvScanVul },
-            { chartId: 'chart-6', config: nbVul },
-            { chartId: 'chart-7', config: tauxDispoSI },
-            { chartId: 'chart-8' },
-            { chartId: 'chart-9' },
+            { metricId: 'metric-1', config: vulTraite, title: 'Vulnérabilités traitées' },
+            { chartId: 'chart-2', config: osServMaj, title: 'OS à jour sur les serveurs' },
+            { chartId: 'chart-3', config: tauxSurvSysProd, title: 'Taux de surveillance des systèmes en production' },
+            { chartId: 'chart-4', config: nbConnIP, title: 'Nombre de connexions bloquées vers ou depuis une IP Dangereuse' },
+            { chartId: 'chart-5', config: couvScanVul, title: 'Couverture des scans de vulnérabilités' },
+            { chartId: 'chart-6', config: nbVul, title: 'Nombre de vulnérabilités' },
+            { chartId: 'chart-7', config: tauxDispoSI, title: 'Taux de disponibilité du SI' },
           ]
         },
         'title-2': {
           grid: [
             { id: 'component-container-1', classes: 'flex col-span-2 row-span-2' },
             { id: 'component-container-2', classes: 'flex' },
-            { id: 'component-container-3', classes: 'flex col-span-2 row-span-2' },
-            { id: 'component-container-4', classes: 'flex' },
+            { id: 'component-container-3', classes: 'flex' },
+            { id: 'component-container-4', classes: 'flex col-span-2 row-span-2' },
             { id: 'component-container-5', classes: 'flex col-span-2 row-span-2' },
           ],
           components: [
-            { chartId: 'chart-1', config: pasPresta },
-            { chartId: 'chart-2', config: lastExercice },
-            { chartId: 'chart-3', config: oradad },
-            { chartId: 'chart-4', config: oradad },
-            { chartId: 'chart-5', config: silene },
+            { chartId: 'chart-1', config: pasPresta, title: 'Taux de PAS founis par les prestataires' },
+            { chartId: 'chart-2', config: lastExercice, title: 'Écart de délai depuis le dernier exercice de gestion de crise réalisé' },
+            { chartId: 'chart-3', config: oradad, title: 'Audit ORADAD' },
+            { chartId: 'chart-4', config: oradad, title: 'Audit ORADAD' },
+            { chartId: 'chart-5', config: silene, title: 'Audit SILENE' },
           ]
         },
         'title-3': {
@@ -158,9 +157,12 @@
         selectedComponents.forEach((component, index) => {
           const container = document.getElementById(`component-container-${index + 1}`);
           if (container) {
-            container.appendChild(createComponent(component.chartId));
-            if (component.config) {
-              createChart(component.chartId, component.config);
+            if (component.chartId) {
+              container.appendChild(createComponentChart(component.chartId));
+              createChart(component.chartId, component.config, component.title);
+            } else if (component.metricId) {
+              container.appendChild(createComponentMetric(component.metricId));
+              createMetric(component.metricId, component.config, component.title)
             }
           }
         });

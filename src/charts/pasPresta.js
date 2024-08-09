@@ -21,10 +21,10 @@ export const pasPresta = {
         title: {
           align: 'start',
           display: true,
-          text: 'Taux de PAS founis par les prestataires',
+          text: '',
           color: 'white',
           font: {
-            size: 24,
+            size: 14,
             weight: 'bold',
           },
           padding: {
